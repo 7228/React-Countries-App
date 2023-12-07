@@ -1,0 +1,92 @@
+.navbar-home {
+    height:80px;
+    background-color:#17a2b8;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    color:white;
+}
+
+.navbar-navigation {
+    display: flex;
+    width: 300px;
+    justify-content: space-evenly;
+    height: 80px;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.navbar-search {
+    margin-left: 500px;
+    color: black;
+}
+
+.navbar-tab-home {
+    height: 100%;
+    width: 100px;
+    text-align: center;
+    padding-top: 0.1px;
+    color:white;
+    text-decoration: none;
+}
+
+.navbar-tab-cart {
+    height: 80px;
+    width: 100px;
+    text-align: center;
+    padding-top: 0.1px;
+    color:white;
+}
+
+.navbar-tab-home:hover {
+    background-color: white;
+    color:black;
+}
+
+.navbar-tab-cart:hover {
+    background-color: white;
+    color:black;
+}
+
+.search-input {
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    border:none;
+}
+
+.navbar-tab {
+    height: 100%;
+    width: 100px;
+    text-align: center;
+}
+
+.navbar-tab:hover {
+    background-color: white;
+    color:black;
+}
+
+.cart-icon {
+    width: 30px;
+}
+
+.cart {
+    position: fixed;
+    right: 150px;
+}
+
+.cart > h3 {
+    color:white;
+}
+

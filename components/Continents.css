@@ -1,0 +1,49 @@
+.map {
+    width: 500px;
+    height:400px;
+    transition: filter .5s ease-in-out;
+    -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(0%); /* FF 35+ */
+    z-index:-1;
+}
+
+.map:hover {
+    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(100%); /* FF 35+ */
+    z-index:-1;
+}
+
+.continents {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-left:275px;
+    margin-top:150px;
+    grid-row-gap: 80px;
+}
+
+.desc {
+    height: 50px;
+    background-color: #197A7F;
+    width: 500px;
+    margin-top: -20px;
+    text-align: center;
+}
+
+.desc > h2 {
+    font-weight: 700;
+    color:white;
+}
+
+.topina {
+    margin-top:200px
+}
+
+.countries-container {
+    margin-left:150px;
+    margin-top:200px;
+    display: flex;
+    column-gap: 100px;
+    row-gap: 80px;
+    flex-wrap:wrap;
+}

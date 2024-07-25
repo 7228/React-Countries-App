@@ -31,20 +31,12 @@ export default function App() {
     })
     },[])
     
-    const currentPath = window.location.pathname;
-    let NavbarComponent;
-
-    if (currentPath === "/") {
-        NavbarComponent = <HomeNavbar />
-    } else {
-        NavbarComponent = <Navbar />
-    }
-
+    const location = useLocation();
     
     return (
         <div className="app">
             <AppContext.Provider value={{allCountries, setAllCountries, cart, setCart, searchResults, setSearchResults, inputLength, setInputLength}}>
-                   {useLocation().pathname === "/" ? <HomeNavbar /> : <Navbar />}
+                   {location.pathname === "/" ? <HomeNavbar /> : <Navbar />}
                     <Routes>
                         <Route path="/" element={<Continents/>}></Route>
                         <Route path="/continent/:id" element={<Continent/>}> </Route>

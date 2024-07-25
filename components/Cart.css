@@ -48,3 +48,29 @@
     height: 35px;
     width: 110px;
 }
+
+@media screen and (max-width: 640px) {
+    .items-container {
+        flex-direction: column;
+        row-gap: 100px;
+        width: 90vw;
+        margin: auto;
+        margin-top: 70px;
+    }
+
+    .cart-item {
+        width: 100%;
+        margin: auto;
+        padding-bottom: 60px;
+    }
+
+    .basic-info {
+        width: 100%;
+        margin: auto;
+    }
+
+    .country-flag {
+        margin-left: 0;
+    }
+
+}

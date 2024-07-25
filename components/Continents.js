@@ -2,16 +2,12 @@ import React from "react";
 import "./Continents.css"
 import { useContext } from "react";
 import { AppContext } from "../App";
-import { Routes, Route, Link } from "react-router-dom";
-import Continent from "./Continent"
-import HomeNavbar from "./HomeNavbar";
+import { Link } from "react-router-dom";
 import CountryOverview from "./CountryOverview";
 
 
 export default function Continents() {
-    const [inputLength, setInputLength] = React.useState(0);
-    const [searchResults, setSearchResults] = React.useState("");
-    const {allCountries} = useContext(AppContext);
+    const {allCountries,searchResults, inputLength} = useContext(AppContext);
     let countries;
    
 
@@ -25,12 +21,9 @@ export default function Continents() {
         })
     }
     
-    console.log(allCountries);
     return(
         inputLength < 1 ?
         <div className="container-1">
-            <HomeNavbar inputLength={inputLength} setInputLength={setInputLength} searchResults={searchResults} setSearchResults={setSearchResults}/>
-            
             <div className="continents">
                 <div className="europe">
                     <Link to={`/continent/Europe`}><img className="map" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Flag_Map_of_Europe.png/1256px-Flag_Map_of_Europe.png" alt="European map"></img></Link>
@@ -71,7 +64,6 @@ export default function Continents() {
             </div>
         </div> :
         <div>
-            <HomeNavbar inputLength={inputLength} setInputLength={setInputLength} searchResults={searchResults} setSearchResults={setSearchResults}/>
             {searchResults.length > 0 && <div className="countries-container">{countries}</div>}
         </div>
     )      

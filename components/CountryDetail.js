@@ -18,7 +18,6 @@ export default function CountryDetail(props) {
 
     return (
         <div className="main-container">
-            <Navbar />
             <div className="country-detail">
                 <div className="basic-info">
                     <img src={result[0].flags.png} alt="country flag" className="flag"></img>

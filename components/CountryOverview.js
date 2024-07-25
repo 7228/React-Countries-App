@@ -44,7 +44,6 @@ export default function CountryOverview(props) {
                     <h3 className="name">{props.name}</h3>
                 </Link>
                 <button onClick={() => add(props.name)} className={props.added ? "added" : "add-to-cart"}>{props.added ? "Added" : "Add to Cart"}</button>
-                
             </div>
     )
 }

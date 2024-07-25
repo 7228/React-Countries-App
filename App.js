@@ -3,8 +3,9 @@ import { useEffect } from "react";
 import "./App.css";
 import Continents from "./components/Continents";
 import HomeNavbar from "./components/HomeNavbar";
+import Navbar from "./components/Navbar";
 import { createContext } from "react";
-import { Route, Routes, Link  } from "react-router-dom";
+import { Route, Routes, Link, BrowserRouter, useLocation  } from "react-router-dom";
 import Continent from "./components/Continent";
 import CountryDetail from "./components/CountryDetail";
 import Cart from "./components/Cart";
@@ -13,6 +14,8 @@ export const  AppContext  = createContext();
 
 export default function App() {
     const [allCountries, setAllCountries] = React.useState("");
+    const [inputLength, setInputLength] = React.useState(0);
+    const [searchResults, setSearchResults] = React.useState("");
     const [cart, setCart] = React.useState([]);
     
     useEffect(() => {
@@ -27,36 +30,27 @@ export default function App() {
                 setAllCountries(data)
     })
     },[])
-    console.log(allCountries)
+    
+    const currentPath = window.location.pathname;
+    let NavbarComponent;
+
+    if (currentPath === "/") {
+        NavbarComponent = <HomeNavbar />
+    } else {
+        NavbarComponent = <Navbar />
+    }
 
     
     return (
         <div className="app">
-            <AppContext.Provider value={{allCountries, setAllCountries, cart, setCart}}>
-                <Routes>
-                    <Route path="/" element={
-                        <Continents 
-                            allCountries = {allCountries} 
-                        />}>
-                    </Route>
-                    <Route path="/continent/:id" element={
-                        <Continent 
-                            allCountries={allCountries} 
-                        />}> 
-                    </Route>
-                    <Route path="/country/:id" element= {
-                        <CountryDetail 
-                            allCountries={allCountries}
-                        />}>    
-                    </Route>
-                    <Route path="/cart" element={
-                        <Cart 
-                            allCountries={allCountries} 
-                            cart={cart} 
-                            setCart={setCart}
-                        />}
-                    ></Route>
-                </Routes>
+            <AppContext.Provider value={{allCountries, setAllCountries, cart, setCart, searchResults, setSearchResults, inputLength, setInputLength}}>
+                   {useLocation().pathname === "/" ? <HomeNavbar /> : <Navbar />}
+                    <Routes>
+                        <Route path="/" element={<Continents/>}></Route>
+                        <Route path="/continent/:id" element={<Continent/>}> </Route>
+                        <Route path="/country/:id" element= {<CountryDetail/>}></Route>
+                        <Route path="/cart" element={<Cart/>}></Route>
+                    </Routes> 
             </AppContext.Provider>
         </div>
         

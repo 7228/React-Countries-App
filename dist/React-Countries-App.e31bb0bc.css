@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
 .map {
     width: 500px;
     height:400px;
@@ -46,6 +50,22 @@
     column-gap: 100px;
     row-gap: 80px;
     flex-wrap:wrap;
+}
+
+@media screen and (max-width: 640px) {
+    .continents {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-top: 120px;
+    }
+
+    .countries-container {
+       margin-top: 200px!important;
+    }
 }
 .flag {
     height: 200px;
@@ -98,6 +118,36 @@ a:hover {
     color:white;
 }
 
+.menu {
+    display: none;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.mobile-only {
+    background: white;
+    display: none;
+    height: 100vh;
+    width: 50vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+    backdrop-filter: blur(10px);
+}
+
+.mobile-only li {
+    margin-top: 50px;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.mobile-only li:hover {
+    transform: scale(1.10);
+    transition: 1s;
+}
+
 .navbar-navigation {
     display: flex;
     width: 300px;
@@ -141,9 +191,28 @@ a:hover {
     color:black;
 }
 
+.navbar-tab-home h3:hover {
+    transform: scale(1.15);
+    transition: 1s;
+}
+
+.navbar-tab:hover {
+    cursor: pointer;
+}
+
+.navbar-tab h3:hover {
+    transform: scale(1.15);
+    transition: 1s;
+}
+
 .navbar-tab-cart:hover {
     background-color: white;
     color:black;
+}
+
+.navbar-tab-cart h3:hover {
+    transform: scale(1.15);
+    transition: 1s;
 }
 
 .search-input {
@@ -177,10 +246,57 @@ a:hover {
     color:white;
 }
 
+@media screen and (max-width: 640px) {
+    .navbar-navigation {
+        display: none;
+    }
 
+    .cart {
+        display: none;
+    }
+
+    .navbar-search {
+        margin-left: 70px;
+    }
+    
+    .search-input {
+        width: 250px;
+        height: 35px;
+    }
+
+    .menu {
+        display: inline-block;
+    }
+
+    .mobile-only {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+.countries-container {
+    margin-left:150px;
+    margin-top:200px;
+    display: flex;
+    column-gap: 100px;
+    row-gap: 80px;
+    flex-wrap:wrap;
+}
+
+@media screen and (max-width:640px) {
+    .countries-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        margin: auto  
+    }
+}
 .country-detail {
     margin-top:150px;
-    margin-left: 250px;;
+    margin-left: 250px;
+    padding-bottom: 50px;
 }
 
 .additional-info {
@@ -200,6 +316,19 @@ a:hover {
     margin-top:40px;
 }
 
+@media screen and (max-width:640px) {
+    .country-detail {
+        width: 90vw;
+        margin: auto;
+        margin-top: 130px;
+    }   
+
+    .additional-info {
+        width: 100%;
+        margin: auto;
+        margin-top: 50px;
+    }
+}
 .items-container {
     display: flex;
     justify-content: space-between;
@@ -249,6 +378,32 @@ a:hover {
     border: none;
     height: 35px;
     width: 110px;
+}
+
+@media screen and (max-width: 640px) {
+    .items-container {
+        flex-direction: column;
+        row-gap: 100px;
+        width: 90vw;
+        margin: auto;
+        margin-top: 70px;
+    }
+
+    .cart-item {
+        width: 100%;
+        margin: auto;
+        padding-bottom: 60px;
+    }
+
+    .basic-info {
+        width: 100%;
+        margin: auto;
+    }
+
+    .country-flag {
+        margin-left: 0;
+    }
+
 }
 
 /*# sourceMappingURL=/React-Countries-App.e31bb0bc.css.map */

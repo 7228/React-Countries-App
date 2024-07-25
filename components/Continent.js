@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AppContext } from "../App";
 import { useParams } from "react-router-dom";
 import CountryOverview from "./CountryOverview";
-import HomeNavbar from "./HomeNavbar";
+import "./Continent.css"
 import Navbar from "./Navbar";
 
 export default function Continent() {
@@ -25,7 +25,6 @@ export default function Continent() {
     
     return (
         <div>
-            <Navbar />
             {result && <div className="countries-container">{result}</div>}
         </div>
     )

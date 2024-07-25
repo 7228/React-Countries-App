@@ -1,6 +1,7 @@
 .country-detail {
     margin-top:150px;
-    margin-left: 250px;;
+    margin-left: 250px;
+    padding-bottom: 50px;
 }
 
 .additional-info {
@@ -18,4 +19,18 @@
 
 .name {
     margin-top:40px;
+}
+
+@media screen and (max-width:640px) {
+    .country-detail {
+        width: 90vw;
+        margin: auto;
+        margin-top: 130px;
+    }   
+
+    .additional-info {
+        width: 100%;
+        margin: auto;
+        margin-top: 50px;
+    }
 }

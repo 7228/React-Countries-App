@@ -36850,143 +36850,7 @@ function CountryOverview(props) {
     className: props.added ? "added" : "add-to-cart"
   }, props.added ? "Added" : "Add to Cart"));
 }
-},{"react":"node_modules/react/index.js","./CountryOverview.css":"components/CountryOverview.css","react-router-dom":"node_modules/react-router-dom/dist/index.js","../App":"App.js"}],"components/HomeNavbar.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/HomeNavbar.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = HomeNavbar;
-var _react = _interopRequireWildcard(require("react"));
-require("./HomeNavbar.css");
-var _App = require("../App");
-var _reactRouterDom = require("react-router-dom");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function HomeNavbar(props) {
-  var _useContext = (0, _react.useContext)(_App.AppContext),
-    allCountries = _useContext.allCountries,
-    setAllCountries = _useContext.setAllCountries;
-  function handleChange(event) {
-    props.setSearchResults(allCountries.filter(function (item) {
-      return item.name.official.toLowerCase().includes(event.target.value.toLowerCase());
-    }));
-    props.setInputLength(event.target.value.length);
-  }
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "navbar-home"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "navbar-navigation"
-  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/",
-    className: "link-tab"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "navbar-tab-home"
-  }, /*#__PURE__*/_react.default.createElement("h3", null, "Home"))), /*#__PURE__*/_react.default.createElement("div", {
-    className: "navbar-tab"
-  }, /*#__PURE__*/_react.default.createElement("h3", null, "About"))), /*#__PURE__*/_react.default.createElement("div", {
-    className: "navbar-search"
-  }, /*#__PURE__*/_react.default.createElement("input", {
-    type: "text",
-    className: "search-input",
-    onChange: function onChange(event) {
-      return handleChange(event);
-    },
-    placeholder: "Search for a country..."
-  })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "navbar-cart"
-  }), /*#__PURE__*/_react.default.createElement("div", {
-    className: "cart"
-  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/cart",
-    className: "link-tab"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "navbar-tab-cart"
-  }, /*#__PURE__*/_react.default.createElement("h3", {
-    className: "cart-heading"
-  }, "Cart")))));
-}
-},{"react":"node_modules/react/index.js","./HomeNavbar.css":"components/HomeNavbar.css","../App":"App.js","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"components/Navbar.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Navbar;
-var _react = _interopRequireDefault(require("react"));
-var _reactRouterDom = require("react-router-dom");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function Navbar() {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "navbar-home"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "navbar-navigation"
-  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/",
-    className: "link-tab"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "navbar-tab-home"
-  }, /*#__PURE__*/_react.default.createElement("h3", null, "Home"))), /*#__PURE__*/_react.default.createElement("div", {
-    className: "navbar-tab"
-  }, /*#__PURE__*/_react.default.createElement("h3", null, "About"))), /*#__PURE__*/_react.default.createElement("div", {
-    className: "cart"
-  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/cart",
-    className: "link-tab"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "navbar-tab-cart"
-  }, /*#__PURE__*/_react.default.createElement("h3", {
-    className: "cart-heading"
-  }, "Cart")))));
-}
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"components/Continent.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Continent;
-var _react = _interopRequireWildcard(require("react"));
-var _App = require("../App");
-var _reactRouterDom = require("react-router-dom");
-var _CountryOverview = _interopRequireDefault(require("./CountryOverview"));
-var _HomeNavbar = _interopRequireDefault(require("./HomeNavbar"));
-var _Navbar = _interopRequireDefault(require("./Navbar"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function Continent() {
-  var _useContext = (0, _react.useContext)(_App.AppContext),
-    allCountries = _useContext.allCountries,
-    setAllCountries = _useContext.setAllCountries,
-    cart = _useContext.cart;
-  var _useParams = (0, _reactRouterDom.useParams)(),
-    id = _useParams.id;
-  var countries = [];
-  var result;
-  console.log("cart:", cart);
-  for (var i = 0; i < allCountries.length; i++) {
-    var country = allCountries[i];
-    if (country.continents.includes(id)) {
-      countries.push(country);
-      result = countries.map(function (country) {
-        return /*#__PURE__*/_react.default.createElement(_CountryOverview.default, {
-          image: country.flags.png,
-          name: country.name.official,
-          added: country.addedToCart
-        });
-      });
-    }
-  }
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Navbar.default, null), result && /*#__PURE__*/_react.default.createElement("div", {
-    className: "countries-container"
-  }, result));
-}
-},{"react":"node_modules/react/index.js","../App":"App.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","./CountryOverview":"components/CountryOverview.js","./HomeNavbar":"components/HomeNavbar.js","./Navbar":"components/Navbar.js"}],"components/Continents.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./CountryOverview.css":"components/CountryOverview.css","react-router-dom":"node_modules/react-router-dom/dist/index.js","../App":"App.js"}],"components/Continents.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36997,29 +36861,15 @@ var _react = _interopRequireWildcard(require("react"));
 require("./Continents.css");
 var _App = require("../App");
 var _reactRouterDom = require("react-router-dom");
-var _Continent = _interopRequireDefault(require("./Continent"));
-var _HomeNavbar = _interopRequireDefault(require("./HomeNavbar"));
 var _CountryOverview = _interopRequireDefault(require("./CountryOverview"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
-function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Continents() {
-  var _React$useState = _react.default.useState(0),
-    _React$useState2 = _slicedToArray(_React$useState, 2),
-    inputLength = _React$useState2[0],
-    setInputLength = _React$useState2[1];
-  var _React$useState3 = _react.default.useState(""),
-    _React$useState4 = _slicedToArray(_React$useState3, 2),
-    searchResults = _React$useState4[0],
-    setSearchResults = _React$useState4[1];
   var _useContext = (0, _react.useContext)(_App.AppContext),
-    allCountries = _useContext.allCountries;
+    allCountries = _useContext.allCountries,
+    searchResults = _useContext.searchResults,
+    inputLength = _useContext.inputLength;
   var countries;
   if (searchResults) {
     countries = allCountries.map(function (country) {
@@ -37034,15 +36884,9 @@ function Continents() {
       }
     });
   }
-  console.log(allCountries);
   return inputLength < 1 ? /*#__PURE__*/_react.default.createElement("div", {
     className: "container-1"
-  }, /*#__PURE__*/_react.default.createElement(_HomeNavbar.default, {
-    inputLength: inputLength,
-    setInputLength: setInputLength,
-    searchResults: searchResults,
-    setSearchResults: setSearchResults
-  }), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "continents"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "europe"
@@ -37104,16 +36948,232 @@ function Continents() {
     alt: "Australia and Oceania map"
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "desc"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, "South America"))))) : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_HomeNavbar.default, {
-    inputLength: inputLength,
-    setInputLength: setInputLength,
-    searchResults: searchResults,
-    setSearchResults: setSearchResults
-  }), searchResults.length > 0 && /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "South America"))))) : /*#__PURE__*/_react.default.createElement("div", null, searchResults.length > 0 && /*#__PURE__*/_react.default.createElement("div", {
     className: "countries-container"
   }, countries));
 }
-},{"react":"node_modules/react/index.js","./Continents.css":"components/Continents.css","../App":"App.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","./Continent":"components/Continent.js","./HomeNavbar":"components/HomeNavbar.js","./CountryOverview":"components/CountryOverview.js"}],"components/CountryDetail.css":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Continents.css":"components/Continents.css","../App":"App.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","./CountryOverview":"components/CountryOverview.js"}],"components/HomeNavbar.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/HomeNavbar.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = HomeNavbar;
+var _react = _interopRequireWildcard(require("react"));
+require("./HomeNavbar.css");
+var _App = require("../App");
+var _reactRouterDom = require("react-router-dom");
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function HomeNavbar(props) {
+  var _useContext = (0, _react.useContext)(_App.AppContext),
+    allCountries = _useContext.allCountries,
+    setAllCountries = _useContext.setAllCountries,
+    setSearchResults = _useContext.setSearchResults,
+    setInputLength = _useContext.setInputLength;
+  var _useState = (0, _react.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    sidebar = _useState2[0],
+    setSidebar = _useState2[1];
+  function handleChange(event) {
+    setSearchResults(allCountries.filter(function (item) {
+      return item.name.official.toLowerCase().includes(event.target.value.toLowerCase());
+    }));
+    setInputLength(event.target.value.length);
+  }
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "navbar-home"
+  }, /*#__PURE__*/_react.default.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "28px",
+    viewBox: "0 -960 960 960",
+    width: "28px",
+    fill: "#FFFFFF",
+    className: "menu",
+    onClick: function onClick() {
+      return setSidebar(true);
+    }
+  }, /*#__PURE__*/_react.default.createElement("path", {
+    d: "M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+  })), sidebar && /*#__PURE__*/_react.default.createElement("ul", {
+    className: "mobile-only"
+  }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "28px",
+    viewBox: "0 -960 960 960",
+    width: "28px",
+    fill: "#5f6368",
+    onClick: function onClick() {
+      return setSidebar(false);
+    }
+  }, /*#__PURE__*/_react.default.createElement("path", {
+    d: "m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, /*#__PURE__*/_react.default.createElement("h3", null, "Home"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h3", null, "About")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/cart"
+  }, /*#__PURE__*/_react.default.createElement("h3", null, "Cart")))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "navbar-navigation"
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/",
+    className: "link-tab"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "navbar-tab-home"
+  }, /*#__PURE__*/_react.default.createElement("h3", null, "Home"))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "navbar-tab"
+  }, /*#__PURE__*/_react.default.createElement("h3", null, "About"))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "navbar-search"
+  }, /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    className: "search-input",
+    onChange: function onChange(event) {
+      return handleChange(event);
+    },
+    placeholder: "Search for a country..."
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: "navbar-cart"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "cart"
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/cart",
+    className: "link-tab"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "navbar-tab-cart"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "cart-heading"
+  }, "Cart")))));
+}
+},{"react":"node_modules/react/index.js","./HomeNavbar.css":"components/HomeNavbar.css","../App":"App.js","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"components/Navbar.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Navbar;
+var _react = _interopRequireWildcard(require("react"));
+var _reactRouterDom = require("react-router-dom");
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function Navbar() {
+  var _useState = (0, _react.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    sidebar = _useState2[0],
+    setSidebar = _useState2[1];
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "navbar-home"
+  }, /*#__PURE__*/_react.default.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "28px",
+    viewBox: "0 -960 960 960",
+    width: "28px",
+    fill: "#FFFFFF",
+    className: "menu",
+    onClick: function onClick() {
+      return setSidebar(true);
+    }
+  }, /*#__PURE__*/_react.default.createElement("path", {
+    d: "M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+  })), sidebar && /*#__PURE__*/_react.default.createElement("ul", {
+    className: "mobile-only"
+  }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "28px",
+    viewBox: "0 -960 960 960",
+    width: "28px",
+    fill: "#5f6368",
+    onClick: function onClick() {
+      return setSidebar(false);
+    }
+  }, /*#__PURE__*/_react.default.createElement("path", {
+    d: "m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+  }))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/"
+  }, /*#__PURE__*/_react.default.createElement("h3", null, "Home"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h3", null, "About")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/cart"
+  }, /*#__PURE__*/_react.default.createElement("h3", null, "Cart")))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "navbar-navigation"
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/",
+    className: "link-tab"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "navbar-tab-home"
+  }, /*#__PURE__*/_react.default.createElement("h3", null, "Home"))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "navbar-tab"
+  }, /*#__PURE__*/_react.default.createElement("h3", null, "About"))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "cart"
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/cart",
+    className: "link-tab"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "navbar-tab-cart"
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "cart-heading"
+  }, "Cart")))));
+}
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"components/Continent.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Continent.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Continent;
+var _react = _interopRequireWildcard(require("react"));
+var _App = require("../App");
+var _reactRouterDom = require("react-router-dom");
+var _CountryOverview = _interopRequireDefault(require("./CountryOverview"));
+require("./Continent.css");
+var _Navbar = _interopRequireDefault(require("./Navbar"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function Continent() {
+  var _useContext = (0, _react.useContext)(_App.AppContext),
+    allCountries = _useContext.allCountries,
+    setAllCountries = _useContext.setAllCountries,
+    cart = _useContext.cart;
+  var _useParams = (0, _reactRouterDom.useParams)(),
+    id = _useParams.id;
+  var countries = [];
+  var result;
+  console.log("cart:", cart);
+  for (var i = 0; i < allCountries.length; i++) {
+    var country = allCountries[i];
+    if (country.continents.includes(id)) {
+      countries.push(country);
+      result = countries.map(function (country) {
+        return /*#__PURE__*/_react.default.createElement(_CountryOverview.default, {
+          image: country.flags.png,
+          name: country.name.official,
+          added: country.addedToCart
+        });
+      });
+    }
+  }
+  return /*#__PURE__*/_react.default.createElement("div", null, result && /*#__PURE__*/_react.default.createElement("div", {
+    className: "countries-container"
+  }, result));
+}
+},{"react":"node_modules/react/index.js","../App":"App.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","./CountryOverview":"components/CountryOverview.js","./Continent.css":"components/Continent.css","./Navbar":"components/Navbar.js"}],"components/CountryDetail.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
@@ -37144,7 +37204,7 @@ function CountryDetail(props) {
   console.log(result);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "main-container"
-  }, /*#__PURE__*/_react.default.createElement(_Navbar.default, null), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "country-detail"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "basic-info"
@@ -37275,7 +37335,7 @@ function Cart() {
       className: "bold"
     }, String(country.unMember))));
   });
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Navbar.default, null), /*#__PURE__*/_react.default.createElement("h2", null, "Country Cart"), cartItems[0] ? /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "Country Cart"), cartItems[0] ? /*#__PURE__*/_react.default.createElement("div", {
     className: "items-container"
   }, cartItems) : /*#__PURE__*/_react.default.createElement("h1", {
     className: "empty-cart"
@@ -37293,6 +37353,7 @@ var _react = _interopRequireWildcard(require("react"));
 require("./App.css");
 var _Continents = _interopRequireDefault(require("./components/Continents"));
 var _HomeNavbar = _interopRequireDefault(require("./components/HomeNavbar"));
+var _Navbar = _interopRequireDefault(require("./components/Navbar"));
 var _reactRouterDom = require("react-router-dom");
 var _Continent = _interopRequireDefault(require("./components/Continent"));
 var _CountryDetail = _interopRequireDefault(require("./components/CountryDetail"));
@@ -37313,10 +37374,18 @@ function App() {
     _React$useState2 = _slicedToArray(_React$useState, 2),
     allCountries = _React$useState2[0],
     setAllCountries = _React$useState2[1];
-  var _React$useState3 = _react.default.useState([]),
+  var _React$useState3 = _react.default.useState(0),
     _React$useState4 = _slicedToArray(_React$useState3, 2),
-    cart = _React$useState4[0],
-    setCart = _React$useState4[1];
+    inputLength = _React$useState4[0],
+    setInputLength = _React$useState4[1];
+  var _React$useState5 = _react.default.useState(""),
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    searchResults = _React$useState6[0],
+    setSearchResults = _React$useState6[1];
+  var _React$useState7 = _react.default.useState([]),
+    _React$useState8 = _slicedToArray(_React$useState7, 2),
+    cart = _React$useState8[0],
+    setCart = _React$useState8[1];
   (0, _react.useEffect)(function () {
     fetch("https://restcountries.com/v3.1/all").then(function (res) {
       return res.json();
@@ -37329,7 +37398,13 @@ function App() {
       setAllCountries(data);
     });
   }, []);
-  console.log(allCountries);
+  var currentPath = window.location.pathname;
+  var NavbarComponent;
+  if (currentPath === "/") {
+    NavbarComponent = /*#__PURE__*/_react.default.createElement(_HomeNavbar.default, null);
+  } else {
+    NavbarComponent = /*#__PURE__*/_react.default.createElement(_Navbar.default, null);
+  }
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "app"
   }, /*#__PURE__*/_react.default.createElement(AppContext.Provider, {
@@ -37337,33 +37412,27 @@ function App() {
       allCountries: allCountries,
       setAllCountries: setAllCountries,
       cart: cart,
-      setCart: setCart
+      setCart: setCart,
+      searchResults: searchResults,
+      setSearchResults: setSearchResults,
+      inputLength: inputLength,
+      setInputLength: setInputLength
     }
-  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Routes, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }, (0, _reactRouterDom.useLocation)().pathname === "/" ? /*#__PURE__*/_react.default.createElement(_HomeNavbar.default, null) : /*#__PURE__*/_react.default.createElement(_Navbar.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Routes, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/",
-    element: /*#__PURE__*/_react.default.createElement(_Continents.default, {
-      allCountries: allCountries
-    })
+    element: /*#__PURE__*/_react.default.createElement(_Continents.default, null)
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/continent/:id",
-    element: /*#__PURE__*/_react.default.createElement(_Continent.default, {
-      allCountries: allCountries
-    })
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    element: /*#__PURE__*/_react.default.createElement(_Continent.default, null)
+  }, " "), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/country/:id",
-    element: /*#__PURE__*/_react.default.createElement(_CountryDetail.default, {
-      allCountries: allCountries
-    })
+    element: /*#__PURE__*/_react.default.createElement(_CountryDetail.default, null)
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/cart",
-    element: /*#__PURE__*/_react.default.createElement(_Cart.default, {
-      allCountries: allCountries,
-      cart: cart,
-      setCart: setCart
-    })
+    element: /*#__PURE__*/_react.default.createElement(_Cart.default, null)
   }))));
 }
-},{"react":"node_modules/react/index.js","./App.css":"App.css","./components/Continents":"components/Continents.js","./components/HomeNavbar":"components/HomeNavbar.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","./components/Continent":"components/Continent.js","./components/CountryDetail":"components/CountryDetail.js","./components/Cart":"components/Cart.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./App.css":"App.css","./components/Continents":"components/Continents.js","./components/HomeNavbar":"components/HomeNavbar.js","./components/Navbar":"components/Navbar.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","./components/Continent":"components/Continent.js","./components/CountryDetail":"components/CountryDetail.js","./components/Cart":"components/Cart.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -37397,7 +37466,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62242" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54452" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

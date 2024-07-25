@@ -37398,13 +37398,7 @@ function App() {
       setAllCountries(data);
     });
   }, []);
-  var currentPath = window.location.pathname;
-  var NavbarComponent;
-  if (currentPath === "/") {
-    NavbarComponent = /*#__PURE__*/_react.default.createElement(_HomeNavbar.default, null);
-  } else {
-    NavbarComponent = /*#__PURE__*/_react.default.createElement(_Navbar.default, null);
-  }
+  var location = (0, _reactRouterDom.useLocation)();
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "app"
   }, /*#__PURE__*/_react.default.createElement(AppContext.Provider, {
@@ -37418,7 +37412,7 @@ function App() {
       inputLength: inputLength,
       setInputLength: setInputLength
     }
-  }, (0, _reactRouterDom.useLocation)().pathname === "/" ? /*#__PURE__*/_react.default.createElement(_HomeNavbar.default, null) : /*#__PURE__*/_react.default.createElement(_Navbar.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Routes, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }, location.pathname === "/" ? /*#__PURE__*/_react.default.createElement(_HomeNavbar.default, null) : /*#__PURE__*/_react.default.createElement(_Navbar.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Routes, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/",
     element: /*#__PURE__*/_react.default.createElement(_Continents.default, null)
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
